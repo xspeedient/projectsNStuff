@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style>
+			body {
+				background-color: #000;
+				margin: 0;
+				overflow: hidden;
+			}
+
+			#text {
+				text-align: center;
+				padding: 10px;
+				z-index: 10;
+				width: 100%;
+				position: absolute;
+				color: white;
+
+			}
+		</style>
+
+		<div id ="text">
+			<p>Particles passing by</p>
+			<p>fr0z3n 2014</p>
+		</div>
+	</head>
+	<body>
+
+		<script src="js/three.js"></script>
+
+		<script>
+
+
+
+			var camera, scene, renderer;
+			var geometry, material, mesh;
+
+			function setup() {
+
+				var W = window.innerWidth, H = window.innerHeight;
+				renderer = new THREE.WebGLRenderer();
+				renderer.setSize( W, H );
+				document.body.appendChild( renderer.domElement );
+
+				camera = new THREE.PerspectiveCamera( 50, W/H, 1, 10000 );
+				camera.position.z = 500;
+
+				scene = new THREE.Scene();
+
+
+				geometry = new THREE.Geometry();
+				for ( i = 0; i < 5000; i ++ ) {
+					var vertex = new THREE.Vector3();
+					vertex.x = 1000 * Math.random() - 500;
+					vertex.y = 1000 * Math.random() - 500;
+					vertex.z = 1000 * Math.random() - 500;
+					geometry.vertices.push( vertex );
+				}
+				material = new THREE.ParticleBasicMaterial( { size: 2.5, sizeAttenuation: true, transparent: true, opacity: 0.5 } );
+				material.color.setHex( 0xff00ff );
+				particles = new THREE.ParticleSystem( geometry, material );
+				particles.sortParticles = true;
+				scene.add( particles );
+
+
+			}
+
+			function draw() {
+
+				requestAnimationFrame( draw );
+
+				var s = Math.sin( Date.now() * 0.0002 );
+				particles.material.color.setHSL(1.5, s, 0.5 );
+
+				particles.rotation.y = Date.now() * 0.0002;
+
+				renderer.render( scene, camera );
+
+			}
+
+			setup();
+			draw();
+
+		</script>
+
+	</body>
+</html>
