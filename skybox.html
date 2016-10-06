@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8>
+    <title>My first Three.js app</title>
+    <style> body { margin: 0; } canvas { width: 100%; height: 100% } </style>
+  </head>
+  <body>
+    <script src="js/three.js"></script>
+    <script>
+      var scene = new THREE.Scene();
+      var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+      var light = new THREE.AmbientLight( 0xffffff, .68 );
+      light.position.set( 0, 1, 1 ).normalize();
+      scene.add(light);
+      // var renderer = new THREE.WebGLRenderer();
+      var renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true } );
+      renderer.setSize( window.innerWidth, window.innerHeight );
+      document.body.appendChild( renderer.domElement );
+
+      ////////////
+      // skybox //
+      ////////////
+      var materialArray = [];
+      materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/sky.jpg' ) }));
+      materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/sky.jpg' ) }));
+      materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/sky.jpg' ) }));
+      materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/sky.jpg' ) }));
+      materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/sky.jpg' ) }));
+      materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/sky.jpg' ) }));
+      for (var i = 0; i < 6; i++)
+         materialArray[i].side = THREE.BackSide;
+      var skyboxMaterial = new THREE.MeshFaceMaterial( materialArray );
+      var skyboxGeom = new THREE.CubeGeometry( 5000, 5000, 5000, 1, 1, 1 );
+      var skybox = new THREE.Mesh( skyboxGeom, skyboxMaterial );
+      scene.add( skybox );
+
+
+
+      function render() {
+        requestAnimationFrame( render );
+
+
+        renderer.render( scene, camera );
+      }
+      render();
+
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<!-- saved from url=(0085)http://stackoverflow.com/questions/10889583/three-js-plane-visible-only-half-the-time -->
+<html itemscope="" itemtype="http://schema.org/QAPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>javascript - Three.js: Plane visible only half the time - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">
+
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded&amp;a">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="Three.js: Plane visible only half the time">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="I&#39;ve created a plane, which I rotate, using Three.js. For some reason, the plane doesn&#39;t show half the time. I&#39;ve created a fiddle here showing the behaviour.">
+    <meta property="og:url" content="http://stackoverflow.com/questions/10889583/three-js-plane-visible-only-half-the-time">
+    <link rel="canonical" href="http://stackoverflow.com/questions/10889583/three-js-plane-visible-only-half-the-time">
+
+    
+    
+    <script type="text/javascript" async="" src="http://engine.adzerk.net/ados?t=1475688926795&amp;request={%22Placements%22:[{%22A%22:22,%22S%22:8277,%22D%22:%22clc-tlb%22,%22AT%22:[4],%22Z%22:[43]},{%22A%22:22,%22S%22:8277,%22D%22:%22clc-mlb%22,%22AT%22:[4],%22Z%22:[44]}],%22Keywords%22:%22javascript%2C%20three.js%22,%22Referrer%22:%22https%3A%2F%2Fwww.google.com%2F%22,%22IsAsync%22:true}"></script><script async="" src="./javascript - Three.js_ Plane visible only half the time - Stack Overflow_files/quant.js"></script><script async="" src="./javascript - Three.js_ Plane visible only half the time - Stack Overflow_files/beacon.js"></script><script async="" src="./javascript - Three.js_ Plane visible only half the time - Stack Overflow_files/analytics.js"></script><script src="./javascript - Three.js_ Plane visible only half the time - Stack Overflow_files/jquery.min.js"></script>
+    <script src="./javascript - Three.js_ Plane visible only half the time - Stack Overflow_files/stub.en.js"></script>
+    <link rel="stylesheet" type="text/css" href="./javascript - Three.js_ Plane visible only half the time - Stack Overflow_files/all.css">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;Three.js: Plane visible only half the time&#39;" href="http://stackoverflow.com/feeds/question/10889583">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/10889583/three-js-plane-visible-only-half-the-time">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/10889583/three-js-plane-visible-only-half-the-time">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/10889583/three-js-plane-visible-only-half-the-time">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:10889583});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '10889583');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","serverTime":1475688926,"routeName":"Questions/Show","site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"enableInsertDocLinkDialog":true,"enableSocialMediaInSharePopup":true},"user":{"fkey":"0436fe14668d2871f06cd831584b8eab","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true}}, {"site":{"allowImageUploads":true,"enableUserHovercards":true,"styleCode":true,"enableNewLinkInsertDialog":true},"tags":{},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true},"flags":{"allowRetractingFlags":true},"snippets":{"snippetsEnabled":true,"renderDomain":"stacksnippets.net"},"markdown":{"asteriskIntraWordEmphasis":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"1403a18e2ded","js/moderator.en.js":"0a0e03b2e130","js/full-anon.en.js":"e3902346e383","js/full.en.js":"88099802c740","js/wmd.en.js":"0cd5ccd5011a","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"5a481766b2d2","js/help.en.js":"a2f92aacc060","js/tageditor.en.js":"4bdf3aadb092","js/tageditornew.en.js":"898f075dba7d","js/inline-tag-editing.en.js":"4fa1a4a3339e","js/revisions.en.js":"47de10a8358f","js/review.en.js":"89b7eef28310","js/tagsuggestions.en.js":"78eee7c19ab2","js/post-validation.en.js":"c36392fc7cb6","js/explore-qlist.en.js":"88f824a42b1a","js/events.en.js":"856f6ff2af55","js/keyboard-shortcuts.en.js":"02a5dbf2fe56","js/external-editor.en.js":"71095ef40e9d","js/external-editor.en.js":"71095ef40e9d","js/snippet-javascript.en.js":"408e31a8bbb2","js/snippet-javascript-codemirror.en.js":"2bfec7785052"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+<script async="" src="./javascript - Three.js_ Plane visible only half the time - Stack Overflow_files/full-anon.en.js"></script><script async="" src="./javascript - Three.js_ Plane visible only half the time - Stack Overflow_files/snippet-javascript.en.js"></script><script async="" src="./javascript - Three.js_ Plane visible only half the time - Stack Overflow_files/post-validation.en.js"></script><script async="" src="./javascript - Three.js_ Plane visible only half the time - Stack Overflow_files/prettify-full.en.js"></script><script async="" src="./javascript - Three.js_ Plane visible only half the time - Stack Overflow_files/external-editor.en.js"></script><link type="text/css" rel="stylesheet" href="./javascript - Three.js_ Plane visible only half the time - Stack Overflow_files/cp.min.css"><script async="" src="./javascript - Three.js_ Plane visible only half the time - Stack Overflow_files/ados.js"></script><script type="text/javascript" src="http://static.adzerk.net/Extensions/adFeedback.js"></script><link rel="stylesheet" href="http://static.adzerk.net/Extensions/adFeedback.css"></head>
+<body class="question-page new-topbar">
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+            <script>(function () { var old = $.fn.contents; $.fn.contents = function () { try { return old.apply(this, arguments); } catch (e) { return $([]); } } })()</script>
+        
+
+
+
+
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+                    <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+        </ul>
+    </div>
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f10889583%2fthree-js-plane-visible-only-half-the-time" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f10889583%2fthree-js-plane-visible-only-half-the-time" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+            </div>
+    </div>
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+        <a href="http://blog.stackoverflow.com/" class="fr">company blog</a>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+                <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 161 Stack Exchange sites">
+                    <span class="hidden-text">Stack Exchange</span>
+                </a>
+
+    <a href="http://stackoverflow.com/questions/10889583/three-js-plane-visible-only-half-the-time#" class="topbar-icon icon-inbox yes-hover js-inbox-button" title="Recent inbox messages">
+        <span class="hidden-text">Inbox</span>
+        <span class="unread-count" style="display:none"></span>
+    </a>
+    <a href="http://stackoverflow.com/questions/10889583/three-js-plane-visible-only-half-the-time#" class="topbar-icon icon-achievements yes-hover js-achievements-button " data-unread-class="" title="Recent achievements: reputation, badges, and privileges earned">
+        <span class="hidden-text">Reputation and Badges</span>
+        <span class="unread-count" style="display:none">
+            
+        </span>
+    </a>
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                <span class="topbar-menu-links">
+                                    <a href="https://stackoverflow.com/users/signup?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f10889583%2fthree-js-plane-visible-only-half-the-time" class="login-link">sign up</a>
+                                <a href="https://stackoverflow.com/users/login?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f10889583%2fthree-js-plane-visible-only-half-the-time" class="login-link">log in</a>
+
+                            <a href="http://stackoverflow.com/tour">tour</a>
+        <a href="http://stackoverflow.com/questions/10889583/three-js-plane-visible-only-half-the-time#" class="icon-help js-help-button" title="Help Center and other resources">
+            help
+            <span class="triangle"></span>
+        </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discuss the workings and policies of this site
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                About Us
+                                <span class="item-summary">
+                                    Learn more about Stack Overflow the company
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://business.stackoverflow.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                Business
+                                <span class="item-summary">
+                                    Learn more about hiring developers or posting ads with us
+                                </span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+                                            </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="http://stackoverflow.com/search" method="get" autocomplete="off">
+                    <input name="q" type="text" placeholder="Search Q&amp;A" value="" tabindex="1" autocomplete="off" maxlength="240">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+        <div id="header">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                            <li><a id="nav-jobs" href="http://stackoverflow.com/jobs?med=site-ui&amp;ref=jobs-tab">Jobs</a></li>
+                                                <li><a id="nav-docs" href="http://stackoverflow.com/documentation">Documentation</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+
+
+    <div id="herobox" class="alternate">
+        <div class="test"></div>
+            <div id="close">
+                <a title="click to minimize"><span>x</span> Dismiss</a>
+            </div>
+        <div class="content">
+            <b>Join the Stack Overflow Community</b>
+            <div class="separator"></div>
+            <div class="blurb">
+                Stack Overflow is a community of 4.7 million programmers, just like you, helping each other.
+                    <br>
+Join them; it only takes a minute:                    <br>
+            </div>
+            <a href="http://stackoverflow.com/users/signup?ssrc=hero&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f10889583%2fthree-js-plane-visible-only-half-the-time" id="tell-me-more" class="button">Sign up</a>
+        </div>
+    </div>
+<script>
+    StackExchange.ready(function () {
+
+        var location = 0;
+        if ($("body").hasClass("questions-page")) {
+            location = 1;;
+        } else if ($("body").hasClass("question-page")) {
+            location = 1;;
+        } else if ($("body").hasClass("faq-page")) {
+            location = 5;;
+        } else if ($("body").hasClass("home-page")) {
+            location = 3;;
+        }
+
+        $('#tell-me-more').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+            });
+        });
+        $('#herobox #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+            });
+            $.cookie("hero", "mini", { path: "/", expires: 365 });
+            $.ajax({
+                url: "/hero-mini",
+                success: function (data) {
+                    $("#herobox").fadeOut("fast", function () {
+                        $("#herobox").replaceWith(data);
+                        $("#herobox-mini").fadeIn("fast");
+                    });
+                }
+            });
+            return false;
+        });
+    });
+
+</script>			<div id="question-header">
+                <h1 itemprop="name"><a href="http://stackoverflow.com/questions/10889583/three-js-plane-visible-only-half-the-time" class="question-hyperlink">Three.js: Plane visible only half the time</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="10889583" id="question">
+
+    <div class="everyonelovesstackoverflow" id="clc-tlb"><iframe id="ados_frame_clc-tlb_1941491" frameborder="0" scrolling="no" height="90" width="728" src="./javascript - Three.js_ Plane visible only half the time - Stack Overflow_files/saved_resource.html"></iframe><img height="0px" width="0px" border="0" style="position: absolute; display: none !important;" src="http://engine.adzerk.net/i.gif?e=eyJhdiI6NDM3MTEsImF0Ijo0LCJidCI6MCwiY20iOjQ0ODY2MiwiY2giOjExNzgsImNrIjp7fSwiY3IiOjE1NTg0ODksImRpIjoiZjU2ZjNiZjk2MzJlNDcxNTk5NDQyZjFmYWI2NGUwOGQiLCJkbSI6MSwiZmMiOjE4MjUxNzEsImZsIjoxOTQxNDkxLCJpcCI6IjEyOC4xNzcuMTEzLjEwNiIsImt3IjoiamF2YXNjcmlwdCx0aHJlZS5qcyIsIm53IjoyMiwicGMiOjYuMzMsImVjIjo2LjMzLCJwciI6NTc5MiwicnQiOjIsInJmIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8iLCJzdCI6ODI3NywidWsiOiJ1ZTEtODAyNTk3NTdiYzM5NDM4MDk4NmUwMzI4ZTVkZmNmYWUiLCJ6biI6NDMsInRzIjoxNDc1Njg4OTI2NzU4LCJiZiI6dHJ1ZSwicG4iOiJjbGMtdGxiIiwiZnEiOjI1Nn0&amp;s=isVzSPs_tS3fahheF9ny1YDK__Q"></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="10889583">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">20</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="http://stackoverflow.com/questions/10889583/three-js-plane-visible-only-half-the-time#">favorite</a>
+        <div class="favoritecount"><b>3</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>I've created a plane, which I rotate, using Three.js. For some reason, the plane doesn't show half the time. I've created a fiddle <a href="http://jsfiddle.net/VsWb9/5/">here</a> showing the behaviour.</p>
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/javascript" class="post-tag js-gps-track" title="show questions tagged &#39;javascript&#39;" rel="tag">javascript</a> <a href="http://stackoverflow.com/questions/tagged/three.js" class="post-tag js-gps-track" title="show questions tagged &#39;three.js&#39;" rel="tag">three.js</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/10889583" title="short permalink to this question" class="short-link" id="link-post-10889583">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/10889583/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2012-06-04 23:04:06Z" class="relativetime">Jun 4 '12 at 23:04</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/707381/randomblue"><div class="gravatar-wrapper-32"><img src="./javascript - Three.js_ Plane visible only half the time - Stack Overflow_files/439db9ac83f4ea14a904390900ec6634" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/707381/randomblue">Randomblue</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 22,076" dir="ltr">22.1k</span><span title="68 gold badges"><span class="badge1"></span><span class="badgecount">68</span></span><span title="223 silver badges"><span class="badge2"></span><span class="badgecount">223</span></span><span title="420 bronze badges"><span class="badge3"></span><span class="badgecount">420</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-10889583" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-10889583" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/10889583/three-js-plane-visible-only-half-the-time#" onclick=""></a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								2 Answers
+                                <span style="display:none;" itemprop="answerCount">2</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/10889583/three-js-plane-visible-only-half-the-time?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active" data-shortcut="A">
+            active</a>
+        <a href="http://stackoverflow.com/questions/10889583/three-js-plane-visible-only-half-the-time?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest" data-shortcut="O">
+            oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/10889583/three-js-plane-visible-only-half-the-time?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes" data-shortcut="V">
+            votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="12999212"></a>
+<div id="answer-12999212" class="answer accepted-answer" data-answerid="12999212" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="12999212">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">31</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="The question owner accepted this as the best answer Oct 21 &#39;12 at 16:34.">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Note that this has changed slightly in Three.js revision r50. Rendering both sides of a plane can be achieved through the <code>side</code> property on the Material, i.e.</p>
+
+<pre class="default prettyprint prettyprinted"><code><span class="pln">plane</span><span class="pun">.</span><span class="pln">material</span><span class="pun">.</span><span class="pln">side </span><span class="pun">=</span><span class="pln"> THREE</span><span class="pun">.</span><span class="typ">DoubleSide</span><span class="pun">;</span></code></pre>
+
+<p>Look <a href="https://github.com/mrdoob/three.js/wiki/Migration">here</a> for more details.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/12999212" title="short permalink to this answer" class="short-link" id="link-post-12999212">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/12999212/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2012-10-21 15:27:48Z" class="relativetime">Oct 21 '12 at 15:27</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/715588/chris"><div class="gravatar-wrapper-32"><img src="./javascript - Three.js_ Plane visible only half the time - Stack Overflow_files/b3434162b088be64514104d1f8cb94b8" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/715588/chris">Chris</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">337</span><span title="3 silver badges"><span class="badge2"></span><span class="badgecount">3</span></span><span title="8 bronze badges"><span class="badge3"></span><span class="badgecount">8</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-12999212" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-25612316" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">do you know how to get 2 different textures on the 2 sides? Anyone?</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1060487/mattdlockyer" title="3,337 reputation" class="comment-user">mattdlockyer</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/10889583/three-js-plane-visible-only-half-the-time#comment25612316_12999212"><span title="2013-07-11 16:24:34Z" class="relativetime-clean">Jul 11 '13 at 16:24</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-29322835" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@mattdlockyer I had the same question and this helped me: <a href="http://stackoverflow.com/questions/11709760/how-can-i-put-two-different-textures-on-the-front-and-back-of-a-plane" title="how can i put two different textures on the front and back of a plane">stackoverflow.com/questions/11709760/…</a></span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/461048/imbrizi" title="2,398 reputation" class="comment-user">imbrizi</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/10889583/three-js-plane-visible-only-half-the-time#comment29322835_12999212"><span title="2013-11-01 21:01:20Z" class="relativetime-clean">Nov 1 '13 at 21:01</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-12999212" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/10889583/three-js-plane-visible-only-half-the-time#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+<div class="everyonelovesstackoverflow" id="clc-mlb"><a href="http://engine.adzerk.net/r?e=eyJhdiI6MTM5MTQyLCJhdCI6NCwiYnQiOjAsImNtIjo0ODQzNTgsImNoIjoxMTc4LCJjayI6e30sImNyIjoxNjU5NjcxLCJkaSI6Ijg1YjY1MWQzNmRiZDRjNzM5YmI5NWQ1NTU4YjAzMTdlIiwiZG0iOjEsImZjIjoxOTcyNjk5LCJmbCI6MjI3NTY4OCwiaXAiOiIxMjguMTc3LjExMy4xMDYiLCJrdyI6ImphdmFzY3JpcHQsdGhyZWUuanMiLCJtayI6ImphdmFzY3JpcHQiLCJudyI6MjIsInBjIjo4LjQ3LCJlYyI6OC40NywicHIiOjc2NSwicnQiOjIsInJmIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8iLCJzdCI6ODI3NywidWsiOiJ1ZTEtODAyNTk3NTdiYzM5NDM4MDk4NmUwMzI4ZTVkZmNmYWUiLCJ6biI6NDQsInRzIjoxNDc1Njg4OTI2NzU5LCJiZiI6dHJ1ZSwicG4iOiJjbGMtbWxiIiwidXIiOiJodHRwczovL3ZzbGl2ZS5jb20vRUNHL2xpdmUzNjBldmVudHMvRXZlbnRzL09ybGFuZG8tMjAxNi9JbmZvcm1hdGlvbi9WU0xpdmUuYXNweD91dG1fc291cmNlPUF0dGVuZGVlTWt0ZyZ1dG1fbWVkaXVtPUJhbm5lckFkJnV0bV9jYW1wYWlnbj1WU0xTTyJ9&amp;s=JGbp_LyO_4so5EhiVKv6gYQ-IhA" rel="nofollow" target="_blank" title=""><img src="http://static.adzerk.net/Advertisers/6d3a9688a85641e18caabaca06172dfa.GIF" title="" alt="" border="0" width="728" height="90" style="display: none !important;"></a><img height="0px" width="0px" border="0" style="position: absolute; display: none !important;" src="http://engine.adzerk.net/i.gif?e=eyJhdiI6MTM5MTQyLCJhdCI6NCwiYnQiOjAsImNtIjo0ODQzNTgsImNoIjoxMTc4LCJjayI6e30sImNyIjoxNjU5NjcxLCJkaSI6Ijg1YjY1MWQzNmRiZDRjNzM5YmI5NWQ1NTU4YjAzMTdlIiwiZG0iOjEsImZjIjoxOTcyNjk5LCJmbCI6MjI3NTY4OCwiaXAiOiIxMjguMTc3LjExMy4xMDYiLCJrdyI6ImphdmFzY3JpcHQsdGhyZWUuanMiLCJtayI6ImphdmFzY3JpcHQiLCJudyI6MjIsInBjIjo4LjQ3LCJlYyI6OC40NywicHIiOjc2NSwicnQiOjIsInJmIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8iLCJzdCI6ODI3NywidWsiOiJ1ZTEtODAyNTk3NTdiYzM5NDM4MDk4NmUwMzI4ZTVkZmNmYWUiLCJ6biI6NDQsInRzIjoxNDc1Njg4OTI2NzYwLCJiZiI6dHJ1ZSwicG4iOiJjbGMtbWxiIiwiZnEiOjB9&amp;s=GyGz_6n6NoGfM-BACjA_xl7LqK8"></div>
+  
+<a name="10889694"></a>
+<div id="answer-10889694" class="answer" data-answerid="10889694" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="10889694">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">14</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>It's not visible because the backface of the plane does not get rendered (or better said, a plane doesn't have backfaces per default. On a side note, have a look at <a href="http://en.wikipedia.org/wiki/Back-face_culling">backface-culling</a> regarding this. Although it's not the issue in this case, it may give you a little insight about rendering).</p>
+
+<p>Three.js does give you a very easy way to render backfaces though. </p>
+
+<p>In Three.js - <strong>r49 and below</strong>:</p>
+
+<p>All you need to do is set the <code>doubleSided</code> - property of your plane-Object to true.</p>
+
+<pre class="default prettyprint prettyprinted"><code><span class="pln">plane</span><span class="pun">.</span><span class="pln">doubleSided </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span></code></pre>
+
+<p>For newer versions - <strong>r50 and up</strong></p>
+
+<p>In newer revisions, as donnyB already stated correctly in his answer, the property was moved from the <code>Object3D</code> - object to the <code>Material</code> - object, so you'd need to set it a little differently, like so:</p>
+
+<pre class="default prettyprint prettyprinted"><code><span class="pln">plane</span><span class="pun">.</span><span class="pln">material</span><span class="pun">.</span><span class="pln">side </span><span class="pun">=</span><span class="pln"> THREE</span><span class="pun">.</span><span class="typ">DoubleSide</span><span class="pun">;</span></code></pre>
+
+<p>Also edited your fiddle to show you: <a href="http://jsfiddle.net/VsWb9/1084/">http://jsfiddle.net/VsWb9/1084/</a></p>
+
+<p>it is using a Three.js - version newer than r50, the property is set on line 35</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/10889694" title="short permalink to this answer" class="short-link" id="link-post-10889694">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/10889694/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/10889694/revisions" title="show all edits to this post">edited <span title="2013-06-07 11:06:46Z" class="relativetime">Jun 7 '13 at 11:06</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2012-06-04 23:20:01Z" class="relativetime">Jun 4 '12 at 23:20</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/809950/gni33"><div class="gravatar-wrapper-32"><img src="./javascript - Three.js_ Plane visible only half the time - Stack Overflow_files/mIOhV.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/809950/gni33">GNi33</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">3,750</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="19 silver badges"><span class="badge2"></span><span class="badgecount">19</span></span><span title="37 bronze badges"><span class="badge3"></span><span class="badgecount">37</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-10889694" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-24521864" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">This no longer works based on testing in r.58</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1060487/mattdlockyer" title="3,337 reputation" class="comment-user">mattdlockyer</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/10889583/three-js-plane-visible-only-half-the-time#comment24521864_10889694"><span title="2013-06-07 04:56:49Z" class="relativetime-clean">Jun 7 '13 at 4:56</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-24531863" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@mattdlockyer updated the answer to cover newer versions too</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/809950/gni33" title="3,750 reputation" class="comment-user">GNi33</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/10889583/three-js-plane-visible-only-half-the-time#comment24531863_10889694"><span title="2013-06-07 11:07:13Z" class="relativetime-clean">Jun 7 '13 at 11:07</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-24533732" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">great job, didn't know your solution was for those revisions, good to know. Thanks!</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1060487/mattdlockyer" title="3,337 reputation" class="comment-user">mattdlockyer</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/10889583/three-js-plane-visible-only-half-the-time#comment24533732_10889694"><span title="2013-06-07 12:02:21Z" class="relativetime-clean">Jun 7 '13 at 12:02</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 2 times"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-24534279" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@mattdlockyer perhaps you should remove the downvote now if it's yours.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/499214/jan-dvorak" title="18,627 reputation" class="comment-user">Jan Dvorak</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/10889583/three-js-plane-visible-only-half-the-time#comment24534279_10889694"><span title="2013-06-07 12:19:43Z" class="relativetime-clean">Jun 7 '13 at 12:19</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-24536295" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">got it upped! thanks</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1060487/mattdlockyer" title="3,337 reputation" class="comment-user">mattdlockyer</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/10889583/three-js-plane-visible-only-half-the-time#comment24536295_10889694"><span title="2013-06-07 13:15:07Z" class="relativetime-clean">Jun 7 '13 at 13:15</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-10889694" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/10889583/three-js-plane-visible-only-half-the-time#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="http://stackoverflow.com/questions/10889583/answer/submit" method="post" class="post-form">
+						    <input type="hidden" id="post-id" value="10889583">
+                            <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false">
+                            <input type="hidden" name="referrer" value="https://www.google.com/">
+							<h2 class="space">Your Answer</h2>
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+                // Have to fire editor after snippets, if snippets enabled
+                if (StackExchange.settings.snippets.snippetsEnabled) {
+                    StackExchange.using("snippets", function() {
+                        createEditor();
+                    });
+                }
+                else {
+                    createEditor();
+                }
+            });
+
+            function createEditor() {
+                prepareEditor({
+                    heartbeatType: 'answer',
+                convertImagesToLinks: true,
+                reputationToPostImages: 10,
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                    ,immediatelyShowMarkdownHelp:true
+                    });
+                
+
+        }
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="0436fe14668d2871f06cd831584b8eab">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+							<div style="position: relative;">
+								
+								            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?ssrc=question_page&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f10889583%2fthree-js-plane-visible-only-half-the-time%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Email and Password</span></p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="manual-openid" class="manual-openid">
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false">
+                    <input type="hidden" name="use-google" class="use-google" value="false">
+                    <input type="button" class="submit-openid" value="Submit" style="display:none">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', 'http%3a%2f%2fstackoverflow.com%2fquestions%2f10889583%2fthree-js-plane-visible-only-half-the-time%23new-answer', 'question_page');
+                    }
+                );
+            </script>
+            <noscript>
+                        &lt;h3&gt;Post as a guest&lt;/h3&gt;
+    &lt;div class="form-item"&gt;
+        &lt;table&gt;
+        &lt;tr&gt;
+                    &lt;td class="vm"&gt;
+                &lt;div&gt;
+                    &lt;label for="display-name"&gt;Name&lt;/label&gt;
+                    &lt;input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105"&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="m-address"&gt;Email&lt;/label&gt;
+                    &lt;input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown" /&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+            </noscript>
+
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+									<a href="http://stackoverflow.com/questions/10889583/three-js-plane-visible-only-half-the-time#" class="btn-clear discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/javascript" class="post-tag" title="show questions tagged &#39;javascript&#39;" rel="tag">javascript</a> <a href="http://stackoverflow.com/questions/tagged/three.js" class="post-tag" title="show questions tagged &#39;three.js&#39;" rel="tag">three.js</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2012-06-04 23:04:06Z"><b>4 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>7712 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/10889583/three-js-plane-visible-only-half-the-time?lastactivity" class="lastactivity-link" title="2013-06-07 11:06:46Z">3 years ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+			<div class="module community-bulletin" data-tracker="cb=1">
+    <div class="related">
+                <div class="bulletin-title">
+                    Blog
+                </div>
+                <hr>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <a href="http://blog.stackoverflow.com/2016/10/podcast-89-the-decline-of-stack-overflow-has-been-greatly-exaggerated/?cb=1" class="question-hyperlink">
+<div class="favicon favicon-stackexchangemeta" title="Meta Stack Exchange"></div>                </a>
+            </div>
+                <div class="bulletin-item-content">
+                    <a href="http://blog.stackoverflow.com/2016/10/podcast-89-the-decline-of-stack-overflow-has-been-greatly-exaggerated/?cb=1" title="Stack Overflow Podcast #89 - The Decline of Stack Overflow Has Been Greatly Exaggerated" class="question-hyperlink">Stack Overflow Podcast #89 - The Decline of Stack Overflow Has Been Greatly…</a>
+                </div>
+                <br class="cbt">
+            </div>
+    </div>
+</div>			
+			<div class="everyonelovesstackoverflow clc-cp-sb clc-cp-benefits clc-cp-conduce-inc" id="hireme"><div class="clc-cp-sb-header" style="background-image: url(//i.stack.imgur.com/TuRqKm.jpg);" target="_blank"><div class="clc-cp-sb-logo"><img src="./javascript - Three.js_ Plane visible only half the time - Stack Overflow_files/Uv4CR.png" alt="Conduce Inc."></div></div><div class="clc-cp-sb-body"><div class="clc-cp-sb-info"><div class="clc-cp-sb-name">Conduce Inc.</div><p class="clc-cp-sb-loc"> based in Carpinteria, CA</p><p></p></div><div class="clc-cp-sb-body-hdr">Benefits</div><ul class="clc-cp-sb-benefits"><li class="clc-cp-sb-benefit"><i class="health"></i><span>Comprehensive health insurance package for employees and family.</span></li><li class="clc-cp-sb-benefit"><i class="clock"></i><span>Flexible working hours.</span></li><li class="clc-cp-sb-benefit"><i class="beach"></i><span>Beach town; easy access to LA.</span></li></ul></div><div class="clc-cp-sb-button">view company page</div><a class="clc-cp-link " href="http://stackoverflow.com/company/conduce-inc" data-at="1" data-tz="4" data-ti="1679" target="_blank"></a><img class="impression" src="./javascript - Three.js_ Plane visible only half the time - Stack Overflow_files/soi.gif" style="display:none;"></div>
+        <script>
+;(function(n){var u=Object.assign||function(n){for(var i,r,u,f,e=[],t=1;t<arguments.length;t++)e[t-1]=arguments[t];for(i=0,r=e;i<r.length;i++){u=r[i];for(f in u)n[f]=u[f]}return n},r,t,f,i;try{if(typeof[].indexOf!="function")return;if(r=["stackoverflow.com","serverfault.com","careers.stackoverflow.com","blog.codinghorror.com","joelonsoftware.com","www.joelonsoftware.com"],r[0]!=="*"&&r.indexOf(location.hostname)===-1)return;t=window;f=t.clc_opts?u({},window.clc_opts):{};t.clc_opts=u(n,f);void 0;t.clc_opts.autoload&&(t.clc_init=t.clc_init||[],t.clc_init.push(function(){return t.clc.load()}));i=document.createElement("script");i.async=!0;void 0;i.src=t.clc_opts.lib;document.body.appendChild(i)}catch(e){void 0}}).call(null, {"azw":true,"kt":2000,"tto":true,"autoload":true,"d":{"sb":["hireme","clc-sb"],"tlb":["careers1","clc-tlb"],"mlb":["careers3","clc-mlb"]},"allowed":["stackoverflow.com","serverfault.com","careers.stackoverflow.com","blog.codinghorror.com","joelonsoftware.com","www.joelonsoftware.com"],"h":"clc.stackoverflow.com","u":"//clc.stackoverflow.com/p.js","lib":"//cdn.sstatic.net/clc/clc.min.js?v=6f49b407ccbc"});        </script>
+			
+
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/11709760?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">6</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/11709760/how-can-i-put-two-different-textures-on-the-front-and-back-of-a-plane?noredirect=1&amp;lq=1" class="question-hyperlink">How can I put two different textures on the front and back of a plane?</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/14013229?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">2</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/14013229/faces-does-not-have-backs?noredirect=1&amp;lq=1" class="question-hyperlink">Faces does not have backs</a>
+</div>			</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/12330531?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">1</div></a><a href="http://stackoverflow.com/questions/12330531/three-js-from-plane-orthogonal-vector-to-plane-rotation-matrix?rq=1" class="question-hyperlink">three.js: from plane-orthogonal vector to plane rotation matrix</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/12771038?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">1</div></a><a href="http://stackoverflow.com/questions/12771038/three-js-my-planes-has-a-dark-side-to-them?rq=1" class="question-hyperlink">three.js: My planes has a dark side to them</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/15192316?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">1</div></a><a href="http://stackoverflow.com/questions/15192316/three-js-loading-model-with-jsonloader-loads-only-half-of-textures?rq=1" class="question-hyperlink">THREE.js: Loading model with JSONLoader loads only half of textures</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/17429208?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">1</div></a><a href="http://stackoverflow.com/questions/17429208/planes-overlapped-by-cube-in-three-js?rq=1" class="question-hyperlink">Planes overlapped by cube in Three.js</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/26829975?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="http://stackoverflow.com/questions/26829975/three-js-reflective-plane-with-cubecamera-texture?rq=1" class="question-hyperlink">Three.js reflective plane with cubeCamera &amp; texture</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/28145820?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">1</div></a><a href="http://stackoverflow.com/questions/28145820/three-js-r70-merging-planes-together-only-renders-the-first-plane?rq=1" class="question-hyperlink">Three.js r70 Merging Planes together only renders the first plane?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/34926223?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">1</div></a><a href="http://stackoverflow.com/questions/34926223/cant-create-a-3d-plane-using-three-js?rq=1" class="question-hyperlink">Cant create a 3d plane using three.js</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/36780570?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">2</div></a><a href="http://stackoverflow.com/questions/36780570/two-canvases-as-textures-for-plane-in-three-js?rq=1" class="question-hyperlink">Two canvases as textures for plane in three.js</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/37506180?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">2</div></a><a href="http://stackoverflow.com/questions/37506180/three-js-construct-plane-through-points-on-axes?rq=1" class="question-hyperlink">Three.js: Construct plane through points on axes</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/37837441?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="http://stackoverflow.com/questions/37837441/extrude-an-imported-3d-plane-with-three-js?rq=1" class="question-hyperlink">Extrude an imported 3d plane with Three.js</a></div>
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-photo" title="Photography Stack Exchange"></div><a href="http://photo.stackexchange.com/questions/83381/why-does-the-canon-1d-x-mk-2-only-have-20-2mp" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:61 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why does the Canon 1D X MK 2 only have 20.2MP
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-esperanto" title="Esperanto Language Stack Exchange"></div><a href="http://esperanto.stackexchange.com/questions/1227/what-is-kioma-used-for-besides-asking-for-the-time" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:662 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is “kioma” used for besides asking for the time?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-gamedev" title="Game Development Stack Exchange"></div><a href="http://gamedev.stackexchange.com/questions/130864/dungeons-in-a-3d-space-game" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:53 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Dungeons in a 3d space game
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="http://travel.stackexchange.com/questions/80050/whats-an-easy-way-of-making-my-luggage-unique-so-that-its-easy-to-spot-on-the" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What's an easy way of making my luggage unique, so that it's easy to spot on the luggage carousel?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-gardening" title="Gardening &amp; Landscaping Stack Exchange"></div><a href="http://gardening.stackexchange.com/questions/29478/can-i-compost-a-large-brush-pile" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:269 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can I compost a large brush pile?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="http://workplace.stackexchange.com/questions/77100/can-taking-a-few-months-off-for-personal-development-make-it-harder-to-re-enter" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can taking a few months off for personal development make it harder to re-enter the workforce?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-webmasters" title="Webmasters Stack Exchange"></div><a href="http://webmasters.stackexchange.com/questions/99869/what-is-schema-id-and-does-inaccessible-urls-within-it-matter" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:45 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is Schema @id and does inaccessible URLS within it matter?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/138813/does-insert-only-db-access-offer-any-additional-security" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does insert only db access offer any additional security
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-emacs" title="Emacs Stack Exchange"></div><a href="http://emacs.stackexchange.com/questions/27581/why-do-setq-and-set-quote-act-differently-on-let-bound-variables-with-lexical-sc" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:583 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why do setq and set quote act differently on let-bound variables with lexical scope?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-askubuntu" title="Ask Ubuntu"></div><a href="http://askubuntu.com/questions/833282/how-can-i-gradually-encrypt-a-file-that-is-being-downloaded" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:89 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I gradually encrypt a file that is being downloaded?'
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/39867396/call-native-code-from-c-c" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Call native code from C/C++
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-money" title="Personal Finance &amp; Money Stack Exchange"></div><a href="http://money.stackexchange.com/questions/71362/tenant-paid-rent-in-cash-and-it-was-stolen-from-a-mailbox-what-should-i-do" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Tenant paid rent in cash and it was stolen from a mailbox. What should I do?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="http://tex.stackexchange.com/questions/332704/tikz-circle-node-pie" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Tikz circle node pie
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-movies" title="Movies &amp; TV Stack Exchange"></div><a href="http://movies.stackexchange.com/questions/61525/is-there-a-term-referring-to-the-transgression-that-often-begins-a-horror-film" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:367 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there a term referring to the transgression that often begins a horror film?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="http://codereview.stackexchange.com/questions/143316/rattlehiss-fizzbuzz-in-python" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    RattleHiss (fizzbuzz in python)
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-parenting" title="Parenting Stack Exchange"></div><a href="http://parenting.stackexchange.com/questions/27277/my-girlfriend-has-mentioned-disowning-her-14-y-o-transgender-daughter" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:228 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    My girlfriend has mentioned disowning her 14 y/o transgender daughter
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stats" title="Cross Validated"></div><a href="http://stats.stackexchange.com/questions/238571/taking-into-account-the-uncertainty-of-p-when-estimating-the-mean-of-a-binomial" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:65 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Taking into account the uncertainty of p when estimating the mean of a binomial distribution
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="http://travel.stackexchange.com/questions/80109/leaving-my-passport-at-the-embassy-to-receive-a-visa-but-it-is-my-only-identific" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Leaving my passport at the embassy to receive a visa but it is my only identification document
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/77434/is-800-am-an-unreasonable-time-to-meet-with-my-graduate-students-and-post-doc" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is 8:00 AM an unreasonable time to meet with my graduate students and post-doc?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-esperanto" title="Esperanto Language Stack Exchange"></div><a href="http://esperanto.stackexchange.com/questions/1234/why-is-it-kiom-strange-instead-of-kiel-strange" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:662 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is it "kiom strange" instead of "kiel strange"?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="http://mathematica.stackexchange.com/questions/127983/transform-a-dsolvevalue-solution-into-a-reasonable-form" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Transform a DSolveValue solution into a reasonable form
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-cs" title="Computer Science Stack Exchange"></div><a href="http://cs.stackexchange.com/questions/64238/proving-the-regularity-of-a-certain-language" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:419 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Proving the regularity of a certain language
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="http://tex.stackexchange.com/questions/332662/subtracting-matrices-of-the-same-dimension-how-to-make-them-align" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Subtracting matrices of the same dimension, how to make them align?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-history" title="History Stack Exchange"></div><a href="http://history.stackexchange.com/questions/33140/why-was-spanish-fascist-dictatorship-left-in-power-after-world-war-ii" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:324 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why was Spanish Fascist dictatorship left in power after World War II?
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/10889583" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/10889583/ivc/82cd');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/10889583/ivc/82cd" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">default</div></div>
+
+
+        </div>
+    </div><script async="" src="./javascript - Three.js_ Plane visible only half the time - Stack Overflow_files/clc.min.js"></script>
+    <div id="footer" class="categories">
+        <div class="footerwrap">            
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                    <a href="http://stackoverflow.com/company/about">about us</a>
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackoverflow.com/company/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick="StackExchange.switchMobile(&quot;on&quot;)">mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="4">
+                Technology
+            </th>
+            <th colspan="2">
+                Life / Arts
+            </th>
+            <th colspan="2">
+                Culture / Recreation
+            </th>
+            <th colspan="2">
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                        <li><a href="http://expressionengine.stackexchange.com/" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                        <li><a href="http://crypto.stackexchange.com/" title="software developers, mathematicians and others interested in cryptography">Cryptography</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://codereview.stackexchange.com/" title="peer programmer code reviews">Code Review</a></li>
+                        <li><a href="http://magento.stackexchange.com/" title="users of the Magento e-Commerce platform">Magento</a></li>
+                        <li><a href="http://dsp.stackexchange.com/" title="practitioners of the art and science of signal, image and video processing">Signal Processing</a></li>
+                        <li><a href="http://raspberrypi.stackexchange.com/" title="users and developers of hardware and software for Raspberry Pi">Raspberry Pi</a></li>
+                        <li><a href="http://codegolf.stackexchange.com/" title="programming puzzle enthusiasts and code golfers">Programming Puzzles &amp; Code Golf</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://movies.stackexchange.com/" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                        <li><a href="http://music.stackexchange.com/" title="musicians, students, and enthusiasts">Music: Practice &amp; Theory</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (8)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://ell.stackexchange.com/" title="speakers of other languages learning English">English Language Learners</a></li>
+                        <li><a href="http://japanese.stackexchange.com/" title="students, teachers, and linguists wanting to discuss the finer points of the Japanese language">Japanese Language</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                        <li><a href="http://anime.stackexchange.com/" title="anime and manga fans">Anime &amp; Manga</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (18)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                        <li><a href="http://chemistry.stackexchange.com/" title="scientists, academics, teachers and students">Chemistry</a></li>
+                        <li><a href="http://biology.stackexchange.com/" title="biology researchers, academics, and students">Biology</a></li>
+                        <li><a href="http://cs.stackexchange.com/" title="students, researchers and practitioners of computer science">Computer Science</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://philosophy.stackexchange.com/" title="those interested in logical reasoning">Philosophy</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (3)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+            <div id="copyright">
+                site design / logo © 2016 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2016.10.5.4035
+            </div>
+                </div>
+    </div>
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+        <script> setTimeout(function() { $("#adzerk-user-match").remove(); }, 2000);</script>
+
+    <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+            
+            ga('create', 'UA-5620270-1');
+            ga('set', 'dimension2', '|javascript|three.js|');             ga('send', 'pageview');
+        
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+                qc.async = true;
+                qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                s.parentNode.insertBefore(qc, s);
+                _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+                            var sc=document.createElement('script');
+                sc.async=true;
+                sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+                s.parentNode.insertBefore(sc, s);
+                _comscore.push({ c1: "2", c2: "17440561" });
+        })();
+
+    </script>
+        
+    
+            <script type="text/javascript">
+                
+                (function(appendChild) {
+                    Node.prototype.appendChild = function() {
+                        var parent = this;
+                        var newNode = arguments[0];
+                        if (parent.nodeName === 'HEAD'
+                            && newNode
+                            && newNode.nodeName === 'SCRIPT'
+                            && newNode.src) {
+                            
+                            window.setTimeout(function() {
+                                var result = newNode.src.match(/^https:\/\/maps\.googleapis\.com\/maps\/api\/place\/js\/(\w+)Service\./i) || [];
+                                var service = result[1];
+                                if (service) {
+                                    if (service === 'Autocompletion') service =  2;
+                                    else if (service === 'Place') service = 1;
+                                    else service = 0;
+                                    StackExchange.using('gps', function() {
+                                        StackExchange.gps.track('google_maps_places_api.call', { service: service });
+                                    });
+                                }
+                            }, 0);
+                        }
+                        return appendChild.apply(this, arguments);
+                    };
+                })(Node.prototype.appendChild);
+            </script>
+    
+<script async="" src="./javascript - Three.js_ Plane visible only half the time - Stack Overflow_files/p.js"></script></body></html>

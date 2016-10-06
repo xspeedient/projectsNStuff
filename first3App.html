@@ -6,10 +6,11 @@
     <style> body { margin: 0; } canvas { width: 100%; height: 100% } </style>
   </head>
   <body>
+    <div id="map"></div>
     <script src="js/three.js"></script>
     <script>
       var scene = new THREE.Scene();
-      var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+      var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.01, 20000 );
       var light = new THREE.AmbientLight( 0xffffff, .68 );
       light.position.set( 0, 1, 1 ).normalize();
       scene.add(light);
@@ -18,7 +19,27 @@
       renderer.setSize( window.innerWidth, window.innerHeight );
       document.body.appendChild( renderer.domElement );
 
-      //create box
+      ////////////
+      // skybox //
+      ////////////
+      //!! Need to add if statement to change skybox to reflect weather
+
+      var materialArray = [];
+      materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/stormCloud.jpg' ) }));
+      materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/stormCloud.jpg' ) }));
+      materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/stormCloud.jpg' ) }));
+      materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/stormCloud.jpg' ) }));
+      materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/stormCloud.jpg' ) }));
+      materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/stormCloud.jpg' ) }));
+      for (var i = 0; i < 6; i++)
+         materialArray[i].side = THREE.BackSide;
+      var skyboxMaterial = new THREE.MeshFaceMaterial( materialArray );
+      var skyboxGeom = new THREE.CubeGeometry( 1000, 1000, 1000, 1, 1, 1 );
+      var skybox = new THREE.Mesh( skyboxGeom, skyboxMaterial );
+      scene.add( skybox );
+      skybox.position.y = 120;
+
+      //create box for crate texture
       var geometry = new THREE.BoxGeometry( 1, 1, 1 );
       //var material = new THREE.MeshBasicMaterial( { color: 0x800020 } );
       // var material2 = new THREE.MeshPhongMaterial( { ambient: 0x050505, color: 0x800020, specular: 0x555555, shininess: 15 } );
@@ -85,71 +106,29 @@
         // var lensFlare = lensFlare;
 
         scene.add( lensFlare );
-        scene.add(new THREE.PointLightHelper(fLight, 3));
+        //scene.add(new THREE.PointLightHelper(fLight, 3));
 
       }
 
-      addLight(scene,0.55, 0.9, 0.5,-35, 43, -35);
+      addLight(scene,0.55, 0.9, 0.5,-32, 42, -35);
 
-
-      // make skybox
-      /*
-      var skyGeo = new THREE.SphereGeometry(100000, 25, 25);
-      var material = new THREE.MeshPhongMaterial({
-          map: texture,
-      });
-      var texture = THREE.ImageUtils.loadTexture( "images/sky.jpg" );
-      var sky = new THREE.Mesh(skyGeo, material);
-      sky.material.side = THREE.BackSide;
-      scene.add(sky);
-      */
 
       // make snow
-      /*
-      var particleCount = 2000,
-      pMaterial = new THREE.PointCloudMaterial({
-        color: 0xFFFFFF,
-        size: 20,
-        map: THREE.ImageUtils.loadTexture(
-           "particle_image_goes_here"
-           ),
-           blending: THREE.AdditiveBlending,
-           depthTest: false,
-           transparent: true
-      });
-      var particleCount = 2000,
-      particles = new THREE.Geometry,
-
-      for (var i = 0; i < particleCount; i++) {
-        var pX = Math.random()*500 - 250,
-        pY = Math.random()*500 - 250,
-        pZ = Math.random()*500 - 250,
-        particle = new THREE.Vector3(pX, pY, pZ);
-        particle.velocity = {};
-        particle.velocity.y = 0;
-        particles.vertices.push(particle);
+      snowGeometry = new THREE.Geometry();
+      for ( i = 0; i < 5000; i ++ ) {
+        var vertex = new THREE.Vector3();
+        vertex.x = 1500 * Math.random() - 500;
+        vertex.y = 1500 * Math.random() - 500;
+        vertex.z = 1500 * Math.random() - 500;
+        snowGeometry.vertices.push( vertex );
       }
-      var particleSystem = new THREE.PointCloud(particles, pMaterial);
-      scene.add(particleSystem);
-
-      var simulateRain = function(){
-        var pCount = particleCount;
-        while (pCount--) {
-          var particle = particles.vertices[pCount];
-          if (particle.y < -200) {
-            particle.y = 200;
-            particle.velocity.y = 0;
-          }
-
-          particle.velocity.y -= Math.random() * .02;
-
-          particle.y += particle.velocity.y;
-        }
-
-        particles.verticesNeedUpdate = true;
-      }; */
-
-
+      material = new THREE.ParticleBasicMaterial( { size: 2.5, sizeAttenuation: true, transparent: true, opacity: 0.5 } );
+      material.color.setHex( 0xFFFFFF );
+      particles = new THREE.ParticleSystem( snowGeometry, material );
+      particles.sortParticles = true;
+      scene.add( particles );
+      particles.position.z = -680;
+      particles.position.y = 50;
 
       // render loop
       function render() {
@@ -158,14 +137,17 @@
         cube.rotation.y += 0.01;
         cube2.rotation.x += 0.01;
         cube2.rotation.y += 0.01;
+
+        particles.rotation.x = Date.now() * 0.0002;
+
         renderer.render( scene, camera );
-        //adding particle render stuff
-        /*
-        particleSystem.rotation.y += 0.01;
-        simulateRain(); */
       }
       render();
-
+      
     </script>
+    <script src="/js/geo.js"> </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaZo786mtmcNjr0nAAFvfapvtdg3ardMM&signed_in=true&libraries=places&callback=initialize" async defer>
+</script>
   </body>
 </html>
