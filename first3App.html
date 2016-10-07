@@ -41,11 +41,8 @@
 
       //create box for crate texture
       var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-      //var material = new THREE.MeshBasicMaterial( { color: 0x800020 } );
-      // var material2 = new THREE.MeshPhongMaterial( { ambient: 0x050505, color: 0x800020, specular: 0x555555, shininess: 15 } );
       var material2 = new THREE.MeshPhongMaterial( {color: 0x800020, transparent: true, opacity: 0.4} )
       var texture = THREE.ImageUtils.loadTexture('images/crate.jpg');
-      //var material = new THREE.MeshBasicMaterial({map: texture});
       var material = new THREE.MeshPhongMaterial({map: texture});
 
       var cube = new THREE.Mesh( geometry, material );
@@ -76,15 +73,6 @@
       cube2.position.x = 3;
 
       camera.position.y = 20;
-      // camera.position.z = 100;
-
-      //make gold point light and helper
-    /*  var goldPoint = new THREE.PointLight(0xDAA520, 2, 150);
-      goldPoint.position.set( -26, 43, -35 );
-      scene.add(goldPoint);
-      scene.add(new THREE.PointLightHelper(goldPoint, 3)); */
-
-
 
       //lensflare
       function addLight(scene, h, s, l, x, y, z ) {
@@ -92,7 +80,7 @@
         var textureFlare0 = THREE.ImageUtils.loadTexture('images/flare.png');
 
         var fLight = new THREE.PointLight( 0xDAA520, 1.8, 150 );
-      //  fLight.color.setHSL( h, s, l );
+        //  fLight.color.setHSL( h, s, l );
         fLight.position.set( x, y, z );
         scene.add( fLight );
         // fLight = fLight;
@@ -114,6 +102,7 @@
 
 
       // make snow
+      /*
       snowGeometry = new THREE.Geometry();
       for ( i = 0; i < 5000; i ++ ) {
         var vertex = new THREE.Vector3();
@@ -122,9 +111,44 @@
         vertex.z = 1500 * Math.random() - 500;
         snowGeometry.vertices.push( vertex );
       }
-      material = new THREE.ParticleBasicMaterial( { size: 2.5, sizeAttenuation: true, transparent: true, opacity: 0.5 } );
+      material = new THREE.ParticleBasicMaterial( { size: 3, sizeAttenuation: true, transparent: true, opacity: 0.5 } );
       material.color.setHex( 0xFFFFFF );
       particles = new THREE.ParticleSystem( snowGeometry, material );
+      particles.sortParticles = true;
+      scene.add( particles );
+      particles.position.z = -680;
+      particles.position.y = 50;  */
+
+      //make rain
+      /*
+      rainGeometry = new THREE.Geometry();
+      for ( i = 0; i < 5000; i ++ ) {
+        var vertex = new THREE.Vector3();
+        vertex.x = 1500 * Math.random() - 500;
+        vertex.y = 1500 * Math.random() - 500;
+        vertex.z = 1500 * Math.random() - 500;
+        rainGeometry.vertices.push( vertex );
+      }
+      material = new THREE.ParticleBasicMaterial( { size: 2, sizeAttenuation: true, transparent: true, opacity: 0.5 } );
+      material.color.setHex( 0x0000FF );
+      particles = new THREE.ParticleSystem( rainGeometry, material );
+      particles.sortParticles = true;
+      scene.add( particles );
+      particles.position.z = -680;
+      particles.position.y = 50; */
+
+      //make blood rain
+      bloodRainGeometry = new THREE.Geometry();
+      for ( i = 0; i < 5000; i ++ ) {
+        var vertex = new THREE.Vector3();
+        vertex.x = 1500 * Math.random() - 500;
+        vertex.y = 1500 * Math.random() - 500;
+        vertex.z = 1500 * Math.random() - 500;
+        bloodRainGeometry.vertices.push( vertex );
+      }
+      material = new THREE.ParticleBasicMaterial( { size: 2, sizeAttenuation: true, transparent: true, opacity: 0.8 } );
+      material.color.setHex( 0x800020 );
+      particles = new THREE.ParticleSystem( bloodRainGeometry, material );
       particles.sortParticles = true;
       scene.add( particles );
       particles.position.z = -680;
@@ -135,6 +159,8 @@
         requestAnimationFrame( render );
         cube.rotation.x += 0.01;
         cube.rotation.y += 0.01;
+        cube.rotation.z += 0.002;
+
         cube2.rotation.x += 0.01;
         cube2.rotation.y += 0.01;
 
@@ -143,11 +169,11 @@
         renderer.render( scene, camera );
       }
       render();
-      
+
     </script>
     <script src="/js/geo.js"> </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaZo786mtmcNjr0nAAFvfapvtdg3ardMM&signed_in=true&libraries=places&callback=initialize" async defer>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaZo786mtmcNjr0nAAFvfapvtdg3ardMM&signed_in=true&libraries=places&callback=initialize" async defer>
 </script>
   </body>
 </html>
