@@ -1,0 +1,27 @@
+{
+  "name": "projects_n_stuff",
+  "version": "1.0.0",
+  "description": "the best damn weather app",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xspeedient/projectsNStuff.git"
+  },
+  "keywords": [
+    "weather",
+    "vr",
+    "3d",
+    "threejs"
+  ],
+  "author": "Sam Scherf",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xspeedient/projectsNStuff/issues"
+  },
+  "homepage": "https://github.com/xspeedient/projectsNStuff#readme"
+}

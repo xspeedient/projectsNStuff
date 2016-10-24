@@ -251,19 +251,6 @@ function makeItBleed() {
 }
 
 
-
-// logic for selcting what renders based on weather
-/* if (Halloween) {
-  makeItBleed();
-  } else if (preciptation > 50% && temp > 32) {
-    makeItRain();
-  } else if (preciptation > 50% && temp < 32) {
-    makeItSnow();
-  } else if (clouds > 15% && precipitation < 30%) {
-
-  }
-*/
-
 //cloudy
 function cloudy() {
   skyboxImg = '../images/stormCloud.jpg';
