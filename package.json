@@ -2,7 +2,7 @@
   "name": "projects_n_stuff",
   "version": "1.0.0",
   "description": "the best damn weather app",
-  "main": "index.js",
+  "main": "modular.html",
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
